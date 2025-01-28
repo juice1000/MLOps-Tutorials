@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/julienlook/Documents/Coding/NobleProg/MLOps/MLOps%20Tutorials/mlruns/904563510640280269/1567e69a9ddf4aadbe342f590bcbc5fc/artifacts
+end_time: 1738060039031
+entry_point_name: ''
+experiment_id: '904563510640280269'
+lifecycle_stage: active
+run_id: 1567e69a9ddf4aadbe342f590bcbc5fc
+run_name: nimble-stork-767
+run_uuid: 1567e69a9ddf4aadbe342f590bcbc5fc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738060036947
+status: 3
+tags: []
+user_id: julienlook

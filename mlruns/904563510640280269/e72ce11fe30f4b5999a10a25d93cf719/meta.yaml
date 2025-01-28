@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/julienlook/Documents/Coding/NobleProg/MLOps/MLOps%20Tutorials/mlruns/904563510640280269/e72ce11fe30f4b5999a10a25d93cf719/artifacts
+end_time: 1738060036945
+entry_point_name: ''
+experiment_id: '904563510640280269'
+lifecycle_stage: active
+run_id: e72ce11fe30f4b5999a10a25d93cf719
+run_name: fun-horse-658
+run_uuid: e72ce11fe30f4b5999a10a25d93cf719
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738060034747
+status: 3
+tags: []
+user_id: julienlook

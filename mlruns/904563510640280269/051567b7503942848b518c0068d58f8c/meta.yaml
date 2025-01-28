@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/julienlook/Documents/Coding/NobleProg/MLOps/MLOps%20Tutorials/mlruns/904563510640280269/051567b7503942848b518c0068d58f8c/artifacts
+end_time: 1738058276771
+entry_point_name: ''
+experiment_id: '904563510640280269'
+lifecycle_stage: active
+run_id: 051567b7503942848b518c0068d58f8c
+run_name: industrious-swan-560
+run_uuid: 051567b7503942848b518c0068d58f8c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738058272883
+status: 3
+tags: []
+user_id: julienlook

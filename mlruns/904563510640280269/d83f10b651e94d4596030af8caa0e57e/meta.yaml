@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/julienlook/Documents/Coding/NobleProg/MLOps/MLOps%20Tutorials/mlruns/904563510640280269/d83f10b651e94d4596030af8caa0e57e/artifacts
+end_time: 1738058694109
+entry_point_name: ''
+experiment_id: '904563510640280269'
+lifecycle_stage: active
+run_id: d83f10b651e94d4596030af8caa0e57e
+run_name: thoughtful-mouse-978
+run_uuid: d83f10b651e94d4596030af8caa0e57e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738058691450
+status: 3
+tags: []
+user_id: julienlook

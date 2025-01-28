@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1738060041088
+current_stage: Staging
+description: null
+last_updated_timestamp: 1738061874349
+name: WineRandomForest
+run_id: 3575232cff7140429ad592bc880f48dc
+run_link: null
+source: file:///Users/julienlook/Documents/Coding/NobleProg/MLOps/MLOps%20Tutorials/mlruns/904563510640280269/3575232cff7140429ad592bc880f48dc/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///Users/julienlook/Documents/Coding/NobleProg/MLOps/MLOps%20Tutorials/mlruns/904563510640280269/3575232cff7140429ad592bc880f48dc/artifacts/model
+user_id: null
+version: 3

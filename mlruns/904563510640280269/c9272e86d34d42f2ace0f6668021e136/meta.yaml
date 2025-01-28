@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/julienlook/Documents/Coding/NobleProg/MLOps/MLOps%20Tutorials/mlruns/904563510640280269/c9272e86d34d42f2ace0f6668021e136/artifacts
+end_time: 1738058283485
+entry_point_name: ''
+experiment_id: '904563510640280269'
+lifecycle_stage: active
+run_id: c9272e86d34d42f2ace0f6668021e136
+run_name: random_forest_sweep
+run_uuid: c9272e86d34d42f2ace0f6668021e136
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738058272876
+status: 3
+tags: []
+user_id: julienlook

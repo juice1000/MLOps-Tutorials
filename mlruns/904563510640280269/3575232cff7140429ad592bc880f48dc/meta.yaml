@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/julienlook/Documents/Coding/NobleProg/MLOps/MLOps%20Tutorials/mlruns/904563510640280269/3575232cff7140429ad592bc880f48dc/artifacts
+end_time: 1738060034745
+entry_point_name: ''
+experiment_id: '904563510640280269'
+lifecycle_stage: active
+run_id: 3575232cff7140429ad592bc880f48dc
+run_name: handsome-conch-209
+run_uuid: 3575232cff7140429ad592bc880f48dc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738060032027
+status: 3
+tags: []
+user_id: julienlook

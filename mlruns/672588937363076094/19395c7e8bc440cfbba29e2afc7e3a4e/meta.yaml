@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/julienlook/Documents/Coding/NobleProg/MLOps/MLOps%20Tutorials/mlruns/672588937363076094/19395c7e8bc440cfbba29e2afc7e3a4e/artifacts
+end_time: 1738041036603
+entry_point_name: ''
+experiment_id: '672588937363076094'
+lifecycle_stage: active
+run_id: 19395c7e8bc440cfbba29e2afc7e3a4e
+run_name: treasured-cow-62
+run_uuid: 19395c7e8bc440cfbba29e2afc7e3a4e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738041034263
+status: 3
+tags: []
+user_id: julienlook
