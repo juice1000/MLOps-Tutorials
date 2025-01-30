@@ -1,8 +1,6 @@
 
 export MLFLOW_TRACKING_URI=http://127.0.0.1:5000
 
-mlflow models serve \
+mlflow models build-docker \
   --model-uri "models:/WineRandomForest/Staging" \
-  --port 8080 \
-  --no-conda
-
+  -n my-docker-image --enable-mlserver
