@@ -1,0 +1,22 @@
+{
+  "data": {
+    "asset": {
+      "id": "ef5c7d20-eb18-40b9-b3e7-b2baf103ab4f",
+      "name": "iris"
+    },
+    "batch_definition": {
+      "id": "1ad962a3-2b3e-49ac-b75d-77072ab7dd48",
+      "name": "iris_batch_definition"
+    },
+    "datasource": {
+      "id": "7f7f0f7e-8676-4ddb-b44f-fac0f3efc33a",
+      "name": "iris"
+    }
+  },
+  "id": "d4ef33e6-1e49-42ca-9435-0aaaac51afc0",
+  "name": "iris_validation_definition",
+  "suite": {
+    "id": "ac27d908-b5fa-46fa-9c7a-a56fb29fada7",
+    "name": "iris_suite"
+  }
+}
