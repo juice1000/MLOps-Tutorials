@@ -1,14 +1,7 @@
-import os
-
-import joblib
-import mlflow
 import pandas as pd
-from evidently.metric_preset import DataDriftPreset
-from evidently.report import Report
 from sklearn.datasets import load_iris
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
+
 from train import train
 
 iris = load_iris()

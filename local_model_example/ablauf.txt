@@ -1,0 +1,11 @@
+1. mlflow wdh.
+
+2. deploy to docker
+
+3. serve from docker
+
+4. deploy to sagemaker
+
+5. serve from sagemaker
+
+6. access from non-authorised user through lambda / api gateway

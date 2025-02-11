@@ -1,9 +1,0 @@
-{
-  "expectations": [],
-  "id": "ac27d908-b5fa-46fa-9c7a-a56fb29fada7",
-  "meta": {
-    "great_expectations_version": "1.3.4"
-  },
-  "name": "iris_suite",
-  "notes": null
-}

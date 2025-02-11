@@ -33,4 +33,4 @@ data_stability.run(
 )
 
 # Print the report (only works in jupyter notebooks)
-data_stability.show()
+# data_stability.show()

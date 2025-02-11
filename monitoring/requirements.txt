@@ -1,3 +1,6 @@
 evidently
 imbalanced-learn
-great_expectations
+joblib
+pandas
+scikit-learn
+mlflow

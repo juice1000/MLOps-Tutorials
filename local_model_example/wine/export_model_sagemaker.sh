@@ -20,10 +20,10 @@ mlflow sagemaker build-and-push-container \
 # Create endpoint
 # CFN-SM-IM-Lambda-catalog-SageMakerExecutionRole-EGtbxKglVqp1 = Sagemakerexecutionrole
 mlflow deployments create -t sagemaker --name mlflow-direct \
-    -m "models:/WineRandomForest/Staging" \
+    -m 'runs:/f6c846e7379c469d815a301628a51cf4/model' \
     --config region_name="ap-southeast-1" \
     --config execution_role_arn="arn:aws:iam::619071320705:role/CFN-SM-IM-Lambda-catalog-SageMakerExecutionRole-EGtbxKglVqp1" \
-    --config image_url="619071320705.dkr.ecr.ap-southeast-1.amazonaws.com/test-mlflow:2.20.0"
+    --config image_url="619071320705.dkr.ecr.ap-southeast-1.amazonaws.com/test-mlflow:2.20.1"
 
 
 # Create & Test endpoint on Sagemaker
