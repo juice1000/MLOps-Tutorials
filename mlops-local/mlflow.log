@@ -1,0 +1,16 @@
+[2025-02-04 06:06:04 +0100] [55859] [INFO] Starting gunicorn 23.0.0
+[2025-02-04 06:06:04 +0100] [55859] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-02-04 06:06:04 +0100] [55859] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 48] Address already in use
+[2025-02-04 06:06:05 +0100] [55859] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-02-04 06:06:05 +0100] [55859] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 48] Address already in use
+[2025-02-04 06:06:06 +0100] [55859] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-02-04 06:06:06 +0100] [55859] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 48] Address already in use
+[2025-02-04 06:06:07 +0100] [55859] [ERROR] Connection in use: ('127.0.0.1', 5000)
+[2025-02-04 06:06:07 +0100] [55859] [ERROR] connection to ('127.0.0.1', 5000) failed: [Errno 48] Address already in use
+[2025-02-04 06:06:08 +0100] [55859] [INFO] Listening at: http://127.0.0.1:5000 (55859)
+[2025-02-04 06:06:08 +0100] [55859] [INFO] Using worker: sync
+[2025-02-04 06:06:08 +0100] [55959] [INFO] Booting worker with pid: 55959
+[2025-02-04 06:06:08 +0100] [55960] [INFO] Booting worker with pid: 55960
+[2025-02-04 06:06:08 +0100] [55961] [INFO] Booting worker with pid: 55961
+[2025-02-04 06:06:08 +0100] [55962] [INFO] Booting worker with pid: 55962
+Running the mlflow server failed. Please see the logs above for details.

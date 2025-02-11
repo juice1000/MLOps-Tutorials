@@ -1,0 +1,48 @@
+name: Retrain Model
+
+on:
+  push:
+    paths:
+      - 'data/raw.csv'
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install dvc dvc-s3
+
+      - name: 🔄 Configure AWS Credentials
+        run: |
+          echo "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" >> $GITHUB_ENV
+          echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
+          echo "AWS_REGION=ap-southeast-1" >> $GITHUB_ENV
+
+      - name: 🔄 Setup DVC Remote with AWS S3
+        run: |
+          dvc remote modify dvc-mlflow --local access_key_id "${{ secrets.AWS_ACCESS_KEY_ID }}" && \
+          dvc remote modify dvc-mlflow --local secret_access_key "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+          dvc remote default dvc-mlflow
+
+      - name: 🚀 Start MLflow Server
+        run: |
+          nohup mlflow server --host 127.0.0.1 --port 5000 --artifacts-destination s3://dvc-ml/mlflow-artifacts/ > mlflow.log 2>&1 &
+          sleep 10
+
+      - name: 🔄 Check MLflow Server Health
+        run: |
+          curl -s http://127.0.0.1:5000/api/2.0/mlflow/experiments/list || (echo "MLflow did not start!" && exit 1)
+
+      - name: ⬇️ Pull Data & Models from DVC
+        run: dvc pull
+
+      - name: 🔬 Run Pipeline
+        run: dvc repro
+
+      - name: 📤 Push Updated Data & Model to DVC
+        run: dvc push

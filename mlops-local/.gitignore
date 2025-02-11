@@ -1,0 +1,6 @@
+.venv/
+*.pdf
+.env
+models/
+mlruns/
+mlartifacts/

@@ -1,0 +1,7 @@
+- DVC mit Git und S3 einrichten
+- DVC push
+- DVC pull
+- DVC repro
+- AWS keys in .env file
+- mlflow server mit S3 und sqlite
+- train script & eval script mit mlflow 
