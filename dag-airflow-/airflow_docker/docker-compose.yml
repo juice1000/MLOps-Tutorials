@@ -1,0 +1,73 @@
+services:
+  airflow-webserver:
+    build: .
+    container_name: airflow-webserver
+    restart: always
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+      - AIRFLOW__WEBSERVER__SECRET_KEY=super_secret_key
+      - AIRFLOW__WEBSERVER__SECRET_KEY_CMD=openssl rand -hex 30
+      - AIRFLOW__WEBSERVER__SECRET_KEY_SECRET=AIRFLOW__WEBSERVER__SECRET_KEY
+      - AWS_PROFILE=default
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./plugins:/opt/airflow/plugins
+      - ~/.aws:/home/airflow/.aws:ro # Mount AWS credentials inside the container
+    ports:
+      - '8080:8080'
+    depends_on:
+      - postgres
+    command: ['airflow', 'webserver']
+
+  airflow-scheduler:
+    build: .
+    container_name: airflow-scheduler
+    restart: always
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+      - AIRFLOW__WEBSERVER__SECRET_KEY=super_secret_key
+      - AIRFLOW__WEBSERVER__SECRET_KEY_CMD=openssl rand -hex 30
+      - AIRFLOW__WEBSERVER__SECRET_KEY_SECRET=AIRFLOW__WEBSERVER__SECRET_KEY
+      - AWS_PROFILE=default
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./plugins:/opt/airflow/plugins
+      - ~/.aws:/home/airflow/.aws:ro # Mount AWS credentials inside the container
+    depends_on:
+      - postgres
+    command: ['airflow', 'scheduler']
+
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    ports:
+      - '8082:8082'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  mlflow-server:
+    image: ghcr.io/mlflow/mlflow
+    container_name: mlflow-server
+    ports:
+      - '8083:8083'
+    environment:
+      - BACKEND_STORE_URI=postgresql://mlflow:mlflow@mlflow-postgres/mlflow_db
+      - AWS_PROFILE=default
+    volumes:
+      - ~/.aws:/home/mlflow/.aws:ro # Ensure AWS credentials are available
+    command: >
+      mlflow server --backend-store-uri BACKEND_STORE_URI=postgresql://mlflow:mlflow@mlflow-postgres/mlflow_db 
+      --host 0.0.0.0 --port 8083 
+      --default-artifact-root s3://aws-glue-assets-619071320705-ap-southeast-1/mlruns
+volumes:
+  postgres_data:
+    driver: local

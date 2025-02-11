@@ -1,0 +1,7 @@
+apache-airflow
+multiprocess
+pandas
+joblib
+mlflow
+evidently
+dvc

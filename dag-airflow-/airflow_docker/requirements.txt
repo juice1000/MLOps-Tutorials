@@ -1,0 +1,10 @@
+apache-airflow
+evidently
+pandas
+numpy
+psycopg2-binary
+boto3
+mlflow 
+scikit-learn
+joblib
+sagemaker

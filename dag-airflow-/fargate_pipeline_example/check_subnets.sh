@@ -1,0 +1,2 @@
+aws ec2 describe-subnets --query "Subnets[*].[SubnetId, AvailabilityZone, VpcId, MapPublicIpOnLaunch]" --output table
+aws logs create-log-group --log-group-name /ecs/job-one-task --region ap-southeast-1

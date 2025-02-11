@@ -1,0 +1,77 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: ECS Task Definitions for Job One and Job Two
+
+Resources:
+  # IAM role for task execution (allows pulling images and sending logs)
+  ECSTaskExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: ECSExecutionRole
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ecs-tasks.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy
+
+  # Optional: A task role for your container to assume (for any additional AWS permissions)
+  ECSTaskRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: ECSTaskRole
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ecs-tasks.amazonaws.com
+            Action: sts:AssumeRole
+
+  # Task definition for the first job/container
+  JobOneTaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: job-one-task
+      RequiresCompatibilities:
+        - FARGATE
+      Cpu: '256'
+      Memory: '512'
+      NetworkMode: awsvpc
+      ExecutionRoleArn: !GetAtt ECSTaskExecutionRole.Arn
+      TaskRoleArn: !GetAtt ECSTaskRole.Arn
+      ContainerDefinitions:
+        - Name: job-one-container
+          Image: 619071320705.dkr.ecr.ap-southeast-1.amazonaws.com/my-dummy-image
+          Essential: true
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-group: /ecs/job-one
+              awslogs-region: ap-southeast-1
+              awslogs-stream-prefix: job-one
+
+  # Task definition for the second job/container
+  JobTwoTaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: job-two-task
+      RequiresCompatibilities:
+        - FARGATE
+      Cpu: '256'
+      Memory: '512'
+      NetworkMode: awsvpc
+      ExecutionRoleArn: !GetAtt ECSTaskExecutionRole.Arn
+      TaskRoleArn: !GetAtt ECSTaskRole.Arn
+      ContainerDefinitions:
+        - Name: job-two-container
+          Image: 619071320705.dkr.ecr.ap-southeast-1.amazonaws.com/my-data-val-image
+          Essential: true
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-group: /ecs/job-two
+              awslogs-region: ap-southeast-1
+              awslogs-stream-prefix: job-two

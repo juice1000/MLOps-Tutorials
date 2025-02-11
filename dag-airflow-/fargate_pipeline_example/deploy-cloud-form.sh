@@ -1,0 +1,1 @@
+aws cloudformation deploy --template-file cloud_form.yaml --stack-name my-ecs-tasks --capabilities CAPABILITY_NAMED_IAM
